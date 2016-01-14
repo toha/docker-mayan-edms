@@ -35,5 +35,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install mayan-edms
 
+VOLUME /usr/local/lib/python2.7/dist-packages/mayan
+
 EXPOSE 8000
 CMD mayan-edms.py runserver 0.0.0.0:8000
