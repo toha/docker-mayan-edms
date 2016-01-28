@@ -37,5 +37,10 @@ RUN pip install mayan-edms
 
 VOLUME /usr/local/lib/python2.7/dist-packages/mayan
 
+ADD base.py /usr/local/lib/python2.7/dist-packages/mayan/settings/base.py
+ADD api.py /usr/local/lib/python2.7/dist-packages/mayan/apps/ocr/api.py
+ADD tesseract.py /usr/local/lib/python2.7/dist-packages/mayan/apps/ocr/backends/tesseract.py
+#RUN mayan-edms.py syncdb
+#RUN mayan-edms.py migrate
 EXPOSE 8000
 CMD mayan-edms.py runserver 0.0.0.0:8000
